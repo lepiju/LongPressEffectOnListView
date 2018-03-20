@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LongPressEffectOnListView"
+    x:Class="LongPressEffectOnListView.LongPressEffectOnListViewPage">
+    <StackLayout>
+        <Label HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Text="{Binding Path=LabelName}"
+            Margin="20"
+            local:LongPressedEffect.Command="{Binding LabelLongPressCommand}">
+            <Label.Effects>
+                <local:LongPressedEffect />
+            </Label.Effects>
+        </Label>
+        <ListView x:Name="ItemList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                        local:LongPressedEffect.Command="{Binding Path=ItemLongPressCommand}">
+                        <TextCell.Effects>
+                            <local:LongPressedEffect />
+                        </TextCell.Effects>
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
