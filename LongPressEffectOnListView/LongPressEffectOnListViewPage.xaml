@@ -26,6 +26,9 @@
                         <Label x:Name="TextLabel"
                             Text="{Binding Name}"
                             local:LongPressedEffect.Command="{Binding Path=ItemLongPressCommand}">
+                            <Label.Effects>
+                                <local:LongPressedEffect />
+                            </Label.Effects>
                         </Label>
                     </ViewCell>
                 </DataTemplate>
