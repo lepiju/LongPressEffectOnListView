@@ -16,12 +16,12 @@
         <ListView x:Name="ItemList">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}"
-                        local:LongPressedEffect.Command="{Binding Path=ItemLongPressCommand}">
-                        <TextCell.Effects>
-                            <local:LongPressedEffect />
-                        </TextCell.Effects>
-                    </TextCell>
+                    <ViewCell>
+                        <Label x:Name="TextLabel"
+                            Text="{Binding Name}"
+                            local:LongPressedEffect.Command="{Binding Path=ItemLongPressCommand}">
+                        </Label>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
